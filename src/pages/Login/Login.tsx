@@ -4,13 +4,13 @@ import { Schema, schema } from '../../utils/rule'
 import Input from '../../components/Input'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
-import { login } from '../../api/auth.api'
 import { ErrorResponse } from '../../types/utils.type'
 import { isAxiosUnprocessableEntityError } from '../../utils/utils'
 import { AppContext } from '../../contexts/app.context'
 import { useContext } from 'react'
 import Button from '../../components/Button/Button'
 import path from '../../constants/path'
+import authApi from '../../api/auth.api'
 
 type FormData = Pick<Schema, 'email' | 'password'>
 const loginSchema = schema.pick(['email', 'password'])
@@ -27,7 +27,7 @@ export default function Login() {
   })
 
   const loginMutation = useMutation({
-    mutationFn: (body: FormData) => login(body)
+    mutationFn: (body: FormData) => authApi.login(body)
   })
 
   const onSubmit = handleSubmit((data) => {

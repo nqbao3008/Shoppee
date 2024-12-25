@@ -1,15 +1,15 @@
+import { useMutation } from '@tanstack/react-query'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Popover from '../Popover'
-import { useContext } from 'react'
 import { AppContext } from '../../contexts/app.context'
-import { useMutation } from '@tanstack/react-query'
-import { logout } from '../../api/auth.api'
 import path from '../../constants/path'
+import authApi from '../../api/auth.api'
 
 export default function Header() {
-  const { setIsAuthenticated, isAuthenticated, profile, setProfile } = useContext(AppContext)
+  const { setIsAuthenticated, isAuthenticated, setProfile, profile } = useContext(AppContext)
   const logoutMutation = useMutation({
-    mutationFn: logout,
+    mutationFn: authApi.logout,
     onSuccess: () => {
       setIsAuthenticated(false)
       setProfile(null)
@@ -28,9 +28,9 @@ export default function Header() {
             className='flex items-center py-1 hover:text-white/70 cursor-pointer'
             renderPopover={
               <div className='bg-white relative shadow-md rounded-sm border border-gray-200'>
-                <div className='flex flex-col py-2 px-3'>
-                  <button className='py-2 px-3 hover:text-orange'>Tieng Viet</button>
-                  <button className='py-2 px-3 hover:text-orange mt-1'>English</button>
+                <div className='flex flex-col py-2 pr-28 pl-3'>
+                  <button className='py-2 px-3 hover:text-orange'>Tiếng Việt</button>
+                  <button className='py-2 px-3 hover:text-orange mt-2'>English</button>
                 </div>
               </div>
             }
@@ -88,20 +88,23 @@ export default function Header() {
               }
             >
               <div className='w-6 h-6 mr-2 flex-shrink-0'>
-                <img src='https://cf.shopee.vn/file/d04ea22afab6e6d250a370d7ccc2e675_tn' />
+                <img
+                  src='https://cf.shopee.vn/file/d04ea22afab6e6d250a370d7ccc2e675_tn'
+                  alt='avatar'
+                  className='w-full h-full object-cover rounded-full'
+                />
               </div>
               <div>{profile?.email}</div>
             </Popover>
           )}
-
           {!isAuthenticated && (
             <div className='flex items-center'>
-              <Link to={path.register} className='m-3 capitalize hover:text-white/70'>
+              <Link to={path.register} className='mx-3 capitalize hover:text-white/70'>
                 Đăng ký
               </Link>
               <div className='border-r-[1px] border-r-white/40 h-4' />
-              <Link to={path.login} className='m-3 capitalize hover:text-white/70'>
-                Đăng Nhập
+              <Link to={path.login} className='mx-3 capitalize hover:text-white/70'>
+                Đăng nhập
               </Link>
             </div>
           )}
