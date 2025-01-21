@@ -71,6 +71,37 @@ const handleConfirmPasswordYup = (refString: string) => {
     .oneOf([yup.ref(refString)], 'Confirm password is not match password')
 }
 
+const handleMinPriceYup = () => {
+  return yup.string().test({
+    name: 'price-not-allowed',
+    message: 'Unreasonable Min Price!!!',
+    test: function (value) {
+      const price_min = value as string
+      const { price_max } = this.parent as { price_min: string; price_max: string }
+      if (price_min !== '' && price_max !== '') {
+        return Number(price_min) < Number(price_max)
+      }
+      return price_min !== '' || price_max !== ''
+    }
+  })
+}
+
+const handleMaxPriceYup = () => {
+  return yup.string().test({
+    name: 'price-not-allowed',
+    message: 'Unreasonable Max Price!!!',
+
+    test: function (value) {
+      const price_max = value
+      const { price_min } = this.parent
+      if (price_min !== '' && price_max !== '') {
+        return Number(price_min) < Number(price_max)
+      }
+      return price_min !== '' || price_max !== ''
+    }
+  })
+}
+
 export const schema = yup.object({
   email: yup
     .string()
@@ -83,7 +114,9 @@ export const schema = yup.object({
     .required('Password required')
     .min(6, 'Password length is 6-160')
     .max(160, 'Password length is 6-160'),
-  confirm_password: handleConfirmPasswordYup('password')
+  confirm_password: handleConfirmPasswordYup('password'),
+  price_min: handleMinPriceYup(),
+  price_max: handleMaxPriceYup()
 })
 
 export type Schema = yup.InferType<typeof schema>

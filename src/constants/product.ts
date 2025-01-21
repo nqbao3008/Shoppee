@@ -1,11 +1,11 @@
 export enum sort_by_type {
-  'createdAt',
-  'view',
-  'sold',
-  'price'
+  createdAt = 'createdAt',
+  view = 'view',
+  sold = 'sold',
+  price = 'price'
 }
 
 export enum order_type {
-  'asc',
-  'desc'
+  asc = 'asc',
+  desc = 'desc'
 }

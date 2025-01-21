@@ -42,9 +42,7 @@ export default function Register() {
         navigate('/')
       },
       onError: (error) => {
-        if (
-          isAxiosUnprocessableEntityError<ErrorResponse<Omit<FormData, 'confirm_password'>>>(error)
-        ) {
+        if (isAxiosUnprocessableEntityError<ErrorResponse<Omit<FormData, 'confirm_password'>>>(error)) {
           const formError = error.response?.data.data
           if (formError) {
             type errorType = Omit<FormData, 'confirm_password'>

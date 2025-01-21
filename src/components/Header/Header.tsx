@@ -160,8 +160,7 @@ export default function Header() {
                         </div>
                         <div className='flex-grow ml-2 overflow-hidden'>
                           <div className='truncate'>
-                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24
-                            cm
+                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24 cm
                           </div>
                         </div>
                         <div className='ml-2 flex-shrink-0'>
@@ -178,8 +177,7 @@ export default function Header() {
                         </div>
                         <div className='flex-grow ml-2 overflow-hidden'>
                           <div className='truncate'>
-                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24
-                            cm
+                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24 cm
                           </div>
                         </div>
                         <div className='ml-2 flex-shrink-0'>
@@ -196,8 +194,7 @@ export default function Header() {
                         </div>
                         <div className='flex-grow ml-2 overflow-hidden'>
                           <div className='truncate'>
-                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24
-                            cm
+                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24 cm
                           </div>
                         </div>
                         <div className='ml-2 flex-shrink-0'>
@@ -214,8 +211,7 @@ export default function Header() {
                         </div>
                         <div className='flex-grow ml-2 overflow-hidden'>
                           <div className='truncate'>
-                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24
-                            cm
+                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24 cm
                           </div>
                         </div>
                         <div className='ml-2 flex-shrink-0'>
@@ -232,8 +228,7 @@ export default function Header() {
                         </div>
                         <div className='flex-grow ml-2 overflow-hidden'>
                           <div className='truncate'>
-                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24
-                            cm
+                            [LIFEMCMBP2 -12% đơn 250K] Bộ Nồi Inox 3 Đáy SUNHOUSE SH334 16, 20, 24 cm
                           </div>
                         </div>
                         <div className='ml-2 flex-shrink-0'>
