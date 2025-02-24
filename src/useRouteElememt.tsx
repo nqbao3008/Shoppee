@@ -8,13 +8,15 @@ import Profile from './pages/Profile'
 import { useContext } from 'react'
 import { AppContext } from './contexts/app.context'
 import path from './constants/path'
-import ProjectDetail from './pages/ProjectDetail'
+import ProjectDetail from './pages/ProductDetail'
 
+// eslint-disable-next-line react-refresh/only-export-components
 const ProtectedRoute = () => {
   const { isAuthenticated } = useContext(AppContext)
   return isAuthenticated ? <Outlet /> : <Navigate to={path.login} />
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 const RejectedRoute = () => {
   const { isAuthenticated } = useContext(AppContext)
   return !isAuthenticated ? <Outlet /> : <Navigate to='/' />
@@ -60,7 +62,6 @@ export default function useRouteElements() {
     },
     {
       path: path.productDetail,
-      index: true,
       element: (
         <MainLayout>
           <ProjectDetail />

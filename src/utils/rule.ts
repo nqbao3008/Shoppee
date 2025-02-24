@@ -3,6 +3,7 @@ import * as yup from 'yup'
 
 type Rules = { [key in keyof Schema]: RegisterOptions<Schema> }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getRule = (getValues?: UseFormGetValues<any>): Rules => ({
   email: {
     required: {
@@ -58,6 +59,12 @@ export const getRule = (getValues?: UseFormGetValues<any>): Rules => ({
           }
         }
       }
+    }
+  },
+  name: {
+    required: {
+      value: true,
+      message: 'email required'
     }
   }
 })
@@ -116,7 +123,8 @@ export const schema = yup.object({
     .max(160, 'Password length is 6-160'),
   confirm_password: handleConfirmPasswordYup('password'),
   price_min: handleMinPriceYup(),
-  price_max: handleMaxPriceYup()
+  price_max: handleMaxPriceYup(),
+  name: yup.string().trim().required('name required')
 })
 
 export type Schema = yup.InferType<typeof schema>

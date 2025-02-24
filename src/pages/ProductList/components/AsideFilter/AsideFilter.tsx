@@ -2,13 +2,13 @@ import { Link, createSearchParams, useNavigate } from 'react-router-dom'
 import path from '../../../../constants/path'
 import Button from '../../../../components/Button'
 import { Category } from '../../../../types/category.type'
-import { QueryConfig } from '../../ProductList'
 import classNames from 'classnames'
 import InputNumber from '../../../../components/InputNumber'
 import { Controller, useForm } from 'react-hook-form'
 import { Schema, schema } from '../../../../utils/rule'
 import { yupResolver } from '@hookform/resolvers/yup'
 import RatingStar from '../RatingStar'
+import { QueryConfig } from '../../../../hooks/useQueryConfig'
 interface Props {
   categories: Category[]
   queryConfig: QueryConfig
@@ -48,6 +48,7 @@ export default function AsideFilter({ categories, queryConfig }: Props) {
       }).toString()
     })
   })
+
   return (
     <div className='py-4'>
       <Link to={path.home} className={classNames('flex items-center font-bold', { 'text-orange': !categoryID })}>
@@ -137,7 +138,6 @@ export default function AsideFilter({ categories, queryConfig }: Props) {
                 />
               )}
             />
-
             <div className='mx-2 mt-2 shrink-0'>-</div>
             <Controller
               control={control}
